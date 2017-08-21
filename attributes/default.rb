@@ -1,5 +1,3 @@
-include_attribute 'deploy'
-
 default[:sidekiq] = {}
 
 node[:deploy].each do |application, deploy|
@@ -11,4 +9,3 @@ node[:deploy].each do |application, deploy|
   default[:sidekiq][application.intern][:syslog] = false
   default[:sidekiq][application.intern][:syslog_ident] = nil
 end
-
